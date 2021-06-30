@@ -6,8 +6,6 @@ from math import pow, sqrt
 import os
 import pygame
 from temperature import get_temp
-pygame.mixer.init()
-pygame.mixer.music.load('msg.wav')
 
 # Parse the arguments from command line
 arg = argparse.ArgumentParser(description='Social distance detection')
@@ -104,11 +102,11 @@ while cap.isOpened():
                 # Distance from camera based on triangle similarity
                 distance = (165 * F)/height
                 d = distance
-                if distance < 1000:
+    
                    # pygame.mixer.music.play()
                    # with pygame.mixer.music.get_busy() == True:
                    #     continue
-                    os.system('mpg321 msg.wav &')
+                    
                 print("Distance(cm):{dist}\n".format(dist=distance))
                 print("Temperature (*C) : {}\n".format(t))
                 # Mid-point of bounding boxes (in cm) based on triangle similarity technique
